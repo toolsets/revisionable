@@ -9,10 +9,7 @@
         }
     ],
     "autoload": {
-        "psr-4": { "Raftalks\\Revisionable\\": "" },
-        "exclude-from-classmap": [
-            "/Tests/"
-        ]
+        "psr-4": { "Raftalks\\Revisionable\\": "src" }
     },
     "config": {
         "bin-dir": "bin"
