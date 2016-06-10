@@ -1,4 +1,0 @@
-suites:
-    revisionable_suite:
-        namespace: Raftalks\Revisionable
-        psr4_prefix: Raftalks\Revisionable
