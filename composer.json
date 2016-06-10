@@ -1,0 +1,14 @@
+{
+    "name": "raftalks/revisionable",
+    "description": "Easily store revisions of Laravel Eloquent Models",
+    "require": {
+        "illuminate/support": "^5.2"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Raf",
+            "email": "7909000@gmail.com"
+        }
+    ]
+}
