@@ -1,21 +1,28 @@
 {
     "name": "raftalks/revisionable",
     "description": "Easily store revisions of Laravel Eloquent Models",
-    "require": {
-        "php": ">=5.5.9",
-        "illuminate/support": "^5.2"
-    },
-    "autoload": {
-        "psr-4": { "Raftalks\\Revisionable": "" },
-        "exclude-from-classmap": [
-            "/Tests/"
-        ]
-    },
     "license": "MIT",
     "authors": [
         {
             "name": "Raf",
             "email": "7909000@gmail.com"
         }
-    ]
+    ],
+    "autoload": {
+        "psr-4": { "Raftalks\\Revisionable\\": "" },
+        "exclude-from-classmap": [
+            "/Tests/"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "^5.2"
+    },
+    "require-dev": {
+        "phpspec/phpspec": "^2.5",
+        "laravel/homestead": "^3.0"
+    }
 }
