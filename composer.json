@@ -11,14 +11,22 @@
     "autoload": {
         "psr-4": { "Raftalks\\Revisionable\\": "src" }
     },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php",
+            "tests/TestModel.php"
+        ]
+    },
     "config": {
         "bin-dir": "bin"
     },
     "require": {
         "php": ">=5.5.9",
-        "illuminate/support": "^5.2"
+        "illuminate/support": "^5.2",
+        "illuminate/database": "^5.2"
     },
     "require-dev": {
-        "laravel/homestead": "^3.0"
+        "laravel/homestead": "^3.0",
+        "phpunit/phpunit": "5.4.*"
     }
 }
