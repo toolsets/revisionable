@@ -62,7 +62,7 @@ class MigrationCommand extends Command
     {
         $migrationFile = base_path('/database/migrations') . '/' . date('Y_m_d_His') . '_revisions_table.php';
         
-        $output = file_get_contents(__DIR__ . '../stubs/db_table_revisions.php');
+        $output = file_get_contents(__DIR__ . '/../stubs/db_table_revisions.php');
 
         if (!file_exists($migrationFile) && $fs = fopen($migrationFile, 'x')) {
             fwrite($fs, $output);
