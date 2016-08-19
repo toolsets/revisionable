@@ -60,7 +60,7 @@ class MigrationCommand extends Command
      */
     protected function createMigration()
     {
-        $migrationFile = base_path('/database/migrations') . '/' . date('Y_m_d_His') . '_revisions_tables.php';
+        $migrationFile = base_path('/database/migrations') . '/' . date('Y_m_d_His') . '_revisions_table.php';
         
         $output = file_get_contents(__DIR__ . '../stubs/db_table_revisions.php');
 
