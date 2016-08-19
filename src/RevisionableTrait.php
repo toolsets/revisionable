@@ -5,6 +5,7 @@ namespace Raftalks\Revisionable;
 
 use Closure;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 
 trait RevisionableTrait
 {
