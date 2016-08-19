@@ -15,6 +15,10 @@ use Raftalks\Revisionable\Commands\MigrationCommand;
 class RevisionableServiceProvider extends ServiceProvider
 {
 
+    protected $commands = [
+            MigrationCommand::class
+        ];
+
     /**
      * Register the service provider.
      *
@@ -23,10 +27,6 @@ class RevisionableServiceProvider extends ServiceProvider
     public function register()
     {
 
-        $this->app['command.revisionable.migration'] = $this->app->share(
-            function () {
-                return new MigrationCommand();
-            }
-        );
+        $this->commands($this->commands);
     }
 }
