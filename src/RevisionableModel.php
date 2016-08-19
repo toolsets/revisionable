@@ -12,4 +12,9 @@ namespace Raftalks\Revisionable;
 interface RevisionableModel
 {
 
+    public function revisions();
+
+    public function getDiff();
+
+    public function saveRevision($user_id = null, $diff = null);
 }
