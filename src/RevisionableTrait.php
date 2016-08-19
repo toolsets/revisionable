@@ -5,6 +5,7 @@ namespace Raftalks\Revisionable;
 
 use Closure;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\DB;
 
 trait RevisionableTrait
 {
@@ -144,7 +145,7 @@ trait RevisionableTrait
 
     final public function saveRevision($user_id = null, $diff = null)
     {
-        $user_id = $user_id ?: Auth::id();
+        $user_id = $user_id ?: app('auth')->id();
 
         $diff = $diff ?: $this->getDiff();
 
