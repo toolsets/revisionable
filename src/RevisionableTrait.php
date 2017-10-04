@@ -34,6 +34,15 @@ trait RevisionableTrait
             $model->saveRevision();
         });
 
+        static::deleting(function(RevisionableModel $model)
+        {
+            if(method_exists($model, 'isForceDeleting') && $model->isForceDeleting() === false) {
+                $model->revisions()->delete();
+            } else {
+                $model->revisions()->forceDelete();
+            }
+        });
+
     }
 
     /**

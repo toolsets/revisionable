@@ -26,6 +26,7 @@ class RevisionsTable extends Migration
             $table->json('before');
             $table->json('after');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

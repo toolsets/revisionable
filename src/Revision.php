@@ -10,9 +10,12 @@ namespace Raftalks\Revisionable;
 
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Revision extends Model
 {
+
+    use SoftDeletes;
 
     protected $table = 'revisions';
 
