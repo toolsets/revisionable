@@ -23,8 +23,8 @@ class RevisionsTable extends Migration
             $table->string('revisionable_type');
             $table->integer('revisionable_id');
             $table->integer('user_id')->unsigned()->nullable();
-            $table->text('before');
-            $table->text('after');
+            $table->json('before');
+            $table->json('after');
             $table->timestamps();
         });
     }

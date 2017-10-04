@@ -20,35 +20,17 @@ class Revision extends Model
         'user_id', 'before', 'after'
     ];
 
+    protected $casts = [
+        'before' => 'json',
+        'after' => 'json'
+    ];
+
     
 
     public function revisionable()
     {
         return $this->morphTo();
     }
-
-
-    public function getBeforeAttribute($value)
-    {
-        return json_decode($value);
-    }
-
-    public function getAfterAttribute($value)
-    {
-        return json_decode($value);
-    }
-
-
-    public function setBeforeAttribute($value)
-    {
-        $this->attributes['before'] = json_encode($value);
-    }
-
-    public function setAfterAttribute($value)
-    {
-        $this->attributes['after'] = json_encode($value);
-    }
-
 
 
     public function mergeDiff($diff)
