@@ -1,6 +1,7 @@
 {
     "name": "raftalks/revisionable",
     "description": "Easily store revisions of Laravel Eloquent Models",
+    "keywords": ["revisionable", "revisions", "eloquent"],
     "license": "MIT",
     "authors": [
         {
@@ -17,18 +18,24 @@
             "tests/TestModel.php"
         ]
     },
-    "config": {
-        "bin-dir": "bin"
-    },
     "require": {
-        "php": ">=5.5.9",
-        "illuminate/support": "5.2.*",
-        "illuminate/database": "5.2.*",
-        "illuminate/console": "5.2.*"
+        "php": ">=7.0.0",
+        "illuminate/support": "5.5.*",
+        "illuminate/database": "5.5.*",
+        "illuminate/console": "5.5.*"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Raftalks\\Revisionable\\RevisionableServiceProvider"
+            ]
+        }
     },
     "require-dev": {
-        "laravel/homestead": "^3.0",
-        "phpunit/phpunit": "5.4.*"
+        "phpunit/phpunit": "6.3.*"
+    },
+    "config": {
+        "sort-packages": true
     },
     "minimum-stability": "dev",
     "prefer-stable": true
