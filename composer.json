@@ -1,5 +1,5 @@
 {
-    "name": "raftalks/revisionable",
+    "name": "toolsets/revisionable",
     "description": "Easily store revisions of Laravel Eloquent Models",
     "keywords": ["revisionable", "revisions", "eloquent"],
     "license": "MIT",
