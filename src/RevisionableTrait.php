@@ -29,12 +29,12 @@ trait RevisionableTrait
     public static function bootRevisionableTrait()
     {
 
-        static::updating(function(RevisionableModel $model)
+        static::updated(function(RevisionableModel $model)
         {
             $model->saveRevision();
         });
 
-        static::deleting(function(RevisionableModel $model)
+        static::deleted(function(RevisionableModel $model)
         {
             if(method_exists($model, 'isForceDeleting') && $model->isForceDeleting() === false) {
                 $model->revisions()->delete();
