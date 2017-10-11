@@ -125,7 +125,7 @@ trait RevisionableTrait
 
 
 
-    final public function savePrivotRevision($relation, $value, Closure $saveCallback)
+    final public function savePivotRevision($relation, $value, Closure $saveCallback)
     {
         if(is_array($value))
         {
@@ -225,8 +225,8 @@ trait RevisionableTrait
 
         if(!empty($changed))
         {
-            $before = array_intersect_key($original, $changed);
-            $after = $changed;
+            $before = array_diff($original, $changed);
+            $after = array_diff($changed, $original);
 
             return compact('before', 'after');
         }
@@ -238,20 +238,12 @@ trait RevisionableTrait
 
     protected function getChanged()
     {
-        return $this->getRevisionableItems($this->getDirty());
+        return $this->getRevisionableItems($this->attributes);
     }
 
     protected function getBeforeChanged()
     {
-
-        $freshCopy = $this->fresh();
-
-        if(is_null($freshCopy))
-        {
-            return $this->original;
-        }
-
-        return $this->getRevisionableItems($freshCopy->toArray());
+        return $this->getRevisionableItems($this->original);
     }
 
     protected function getRevisionableItems($values)
